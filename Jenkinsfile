@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-                git clone https://github.com/phelinor/jenkinsfile-runner-lambda-example.git'
+                git clone https://github.com/black-hole-soft/jenkinsfile-runner-lambda-example.git'
                 echo 'Jerry Script'
                 env
                 echo $JAVA_HOME
