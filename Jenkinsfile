@@ -9,12 +9,10 @@ pipeline {
             steps {
                 sh """
                 git clone https://github.com/black-hole-soft/jenkinsfile-runner-lambda-example.git
-                env
-                echo $JAVA_HOME
-                /usr/libexec/java_home -V
-                ls /Library/Java/JavaVirtualMachines
+                export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
                 java -version
-                #mvn -Duser.home=/tmp clean package
+                mvn -version
+                mvn -Duser.home=/tmp clean package
                 """
             }
         }
